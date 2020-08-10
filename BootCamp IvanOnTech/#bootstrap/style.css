@@ -90,3 +90,7 @@ body {
   p:nth-of-type(2) {
     font-size: 1em;
   }
+
+. ('popover-dismiss').popover ({
+    trigger: 'focus'
+  })
