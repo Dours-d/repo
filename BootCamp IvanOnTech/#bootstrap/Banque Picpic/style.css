@@ -1,11 +1,12 @@
 body {
-    background-color: rgba(255, 204, 0, 1.0);
+    background-color: #9D1831;
     font: 1em Helvetica;
   }
   
   #container {
     width: 840px;
-    margin: 25px auto;
+    margin: 0;
+    
   }
   
   .whysign {
@@ -17,6 +18,7 @@ body {
     padding-top: 20px;
     padding-right: 20px;
     text-align: center;
+    margin: 0 auto;
   }
   
   .signup {
@@ -26,6 +28,7 @@ body {
     background-color:rgb(245, 234, 79);
     text-align: center;
     border-radius: 8px 0 0 8px;
+    margin: 0 auto;
   }
   
   [type=text] {
@@ -37,17 +40,17 @@ body {
     height: 45px;
     line-height: 45px;
     margin-bottom: 10px;
-    font-size: 1em;
+    font-size: 1.5em;
     color: rgba(0,0,0,.4);
-  
-  
+    border-radius: 2px;
+    padding-left: 5px;
   }
   
   [type=submit] {
     margin-top: 25px;
     width: 60%;
     border: 0;
-    background-color: #53CACE;
+    background-color: #62ac78;
     border-radius: 5px;
     height: 50px;
     color: white;
@@ -58,7 +61,7 @@ body {
   
   [type='text']:focus {
     outline: none;
-    border-color: #53CACE;
+    border-color: #62ac78;
   }
   
   h1 {
@@ -69,18 +72,18 @@ body {
   
   p {
     color: rgba(0,0,0,.6);
-    font-size: 1.2em;
+    font-size: 2em;
     margin: 50px 0 50px 0;
   }
   
   span {
     font-size: .75em;
-    background-color: white;
+    background-color: #503F34;
     padding: 2px 5px;
-    color: rgba(0,0,0,.8);
-    border-radius: 4px;
+    color: #f5ea4f;
+    border-radius: 2px;
     box-shadow: 4px 4px 4px rgba(255, 204, 0.6);
-    margin: 5px;
+    margin: 8px;
   }
   
   span:hover {
