@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <title>button alert - Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+      /*body {  background-color: #BF920E; }*/
+      btn btn-success{}
+    </style>
+  </head>
+  <body>
+    <h1><div [12] type="button" class="btn btn-#E19D3D row-cols-12 ">Click if you wish</div></h1>
+  
+          <input type="button" value="Alert" onclick="myfunction()" class="btn btn-#E19D3D row-cols-12" id="button"/>
+          <textarea id="textfield">Hello World</textarea>
+          <input id="messageID">
+    </div>
+  
+
+  <script>
+  function myfunction() {
+
+  var value = document.getElementById("textfield").value;
+    document.getElementById('messageID').value=value;
+  alert(value);
+
+}
+  </script>
+ </body>
+</html>
