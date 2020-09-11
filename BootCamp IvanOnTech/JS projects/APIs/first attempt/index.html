@@ -19,16 +19,26 @@
       </style>
   </head>
   <body>
-    <h1 id="24hChange"></h1>
+    
+    <img src="https://logos-download.com/wp-content/uploads/2017/05/Bitcoin_logo-700x155.png"/>
+    
+    <p> 's price is </p>
+
+    <h1 id="price"></h1><br>
+
+    <img src="https://freepngimg.com/thumb/dollar/7-2-dollar-png-clipart-thumb.png"/>
+    
+
   <script>
-    var market[] = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=chf&ids=ethereum";
-    fetch(market[0].market_cap_change_24h)
-    .then(res => {
-      res.json().then(data => {
-        console.log(data);
-        $("#24hChange").html(data);
+    var url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+    fetch(url)
+    .then(function(res){
+      res.json().then(function(data){
+        console.log(data.bitcoin.usd);
+        $("#price").html(data.bitcoin.usd);
       })
+
     })
   </script>
- </body>[0].market_cap_change_24h
+ </body>
 </html>

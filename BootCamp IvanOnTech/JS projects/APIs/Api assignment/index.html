@@ -19,16 +19,42 @@
       </style>
   </head>
   <body>
-    <h1 id="24hChange"></h1>
+    <p>Last 24hours, Ethereum market capitalization has change by </p>
+    
+
+    <h1 id="24hmcc"></h1><br>
+
+    
+    
+
   <script>
-    var market[] = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=chf&ids=ethereum";
-    fetch(market[0].market_cap_change_24h)
+      let BASE_URL = "https://api.coingecko.com/api/v3"
+      let ENDPOINT = "/coins/markets?vs_currency=chf&ids=ethereum&market_cap_change_24h;"
+            
+      let ethMarketChange = BASE_URL + ENDPOINT
+    
+    fetch("https://httpbin.org/post",{
+      method:"post",
+      body:JSON.stringify({secret1: "secret data",
+                sensitive: "sensitive"})  
+    })  
+    .then(res => {
+      res.json().then(data => {
+        console.log(data); 
+      })
+
+    fetch(ethMarketChange)
     .then(res => {
       res.json().then(data => {
         console.log(data);
-        $("#24hChange").html(data);
+        $("#24hmcc").html(data);
       })
     })
+    .catch(err => {
+      $("#24hmcc").html (err);
+    })
+    });
+
   </script>
- </body>[0].market_cap_change_24h
+ </body>
 </html>
