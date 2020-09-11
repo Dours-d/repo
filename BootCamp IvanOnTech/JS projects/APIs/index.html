@@ -15,20 +15,38 @@
       h1:hover {
         background: #EE5A54;
       }
-      body {  background-color: #1798AC; display:flex; align-items:center; flex-direction: column; }
+      body {  background-color: #e5bc8b; display:flex; align-items:center; flex-direction: column; }
       </style>
   </head>
   <body>
+    <div class="container" style="background-color: #213429;">
+
     <h1 id="24hChange"></h1>
+  	</div>
+  	<div class="container" style="background-color: #e5bc8b"></div>
   <script>
-    var market[] = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=chf&ids=ethereum";
-    fetch(market[0].market_cap_change_24h)
+    var mybr = document.createElement('br');
+		document.body.appendChild(mybr);
+    
+    var image = "<img src=https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880/>";
+
+    var market = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum"
+
+    console.log (market);
+    
+
+		fetch(market)
     .then(res => {
-      res.json().then(data => {
-        console.log(data);
-        $("#24hChange").html(data);
-      })
-    })
+     	res.json().then(data => {				
+      	console.log(data[0].market_cap_change_24h);
+    		if(data[0].market_cap_change_24h >=0){
+    			document.getElementById("24hChange").style.color ="green";
+    			$("#24hChange").html(image + "'s market cap has grown by "+ data[0].market_cap_change_24h + " $ in the past 24 hours.");
+    		}else{
+    			document.getElementById("24hChange").style.color ="red";
+    			$("#24hChange").html(image +"'s market cap has schrink by " + data[0].market_cap_change_24h + " $ in the past 24 hours.")}
+    		})});
+    console.log (image)
   </script>
- </body>[0].market_cap_change_24h
-</html>
+  </body>									
+</html>											
