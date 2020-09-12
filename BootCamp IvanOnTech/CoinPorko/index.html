@@ -3,15 +3,21 @@
   <title>Api's - Bootcamp Week 4 Day 4</title>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type=”text/javascript”></script>
+    <script src="https://kit.fontawesome.com/240a555934.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"/>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <style>
-      mr-auto { style="display:flex; 
+      .bs-example{
+      margin: 20px;
+      }
+      .mr-auto { style="display:flex; 
         align-items: stretch; 
         flex-wrap: wrap;
 
@@ -22,11 +28,18 @@
       
 
 
-    
-    
-    
+      #coin {
+        background-image: linear-gradient(to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f ); } 
+      }
+      .p { 
+        color: white; mix-blend-mode: difference;
+      }
+    #tab {
+      color: #191919;
+    }
+
     h1 {size: 1em;
-      color: #584D4F;
+      /*color: #584D4F;*/
       margin: 5px;
       cursor: pointer;
     } 
@@ -66,7 +79,7 @@
           <a class="nav-link" href="#">Exchanges</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Yield Farming *</a>
+          <a class="nav-link" href="#">Yield Farming <i class="fas fa-poo-storm"></i></a>
         </li>
       </ul>
     </div>
@@ -77,16 +90,45 @@
 <div class="container" style="display:flex; flex-direction : row; justify-content: center">
   <h2 class="mt-5">Top 100 Cryptocurrencies by Market Capitalization</h2>
 </div>
-  
+<div class="container" style="display:flex; flex-direction : row; justify-content: center;">
+<div class="bs-example">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#home" id="tab" class="nav-link active" data-toggle="tab">Cryptocurrencies</a>
+        </li>
+        <li class="nav-item">
+            <a href="#profile" id="tab" class="nav-link" data-toggle="tab">Exchanges</a>
+        </li>
+        <li class="nav-item">
+            <a href="#messages" id="tab" class="nav-link" data-toggle="tab">Watch List</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+            <h4 class="mt-2">Cryptocurrencies tab content</h4>
+            <p><ul style ="background-color: #A3856C" class="list-group-flush">
+              <li id = "coin" class="list-group-item">Loremipsum</li>
+              <li id = "coin" class="list-group-item">Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</li>
+            </p>
+        </div>
+        <div class="tab-pane fade" id="profile">
+            <h4 class="mt-2">Exchanges tab content</h4>
+            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+        </div>
+        <div class="tab-pane fade" id="messages">
+            <h4 class="mt-2">Watch list tab content</h4>
+            <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
+        </div>
+    </div>
+</div>
+
+
+
 
 
   
       
-    </Form>
-      </div>
-    </Navbar.Brand>
-  </Navbar>
-
+    
 
 
   <script>
