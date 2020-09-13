@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <title>Api's - Bootcamp Week 4 Day 4</title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style type="text/css">
+
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+      *, *:before, *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+      body {
+          background: #105469;
+          font-family: 'Open Sans', sans-serif;
+      }
+      table {
+          background: #012B39;
+          border-radius: 0.25em;
+          border-collapse: collapse;
+          margin: 1em;
+      }
+      th {
+          border-bottom: 1px solid #364043;
+          color: #E2B842;
+          font-size: 0.85em;
+          font-weight: 600;
+          padding: 0.5em 1em;
+          text-align: left;
+      }
+      td {
+        color: #fff;
+        font-weight: 400;
+        padding: 0.65em 1em;
+      }
+.disabled td {
+  color: #4F5F64;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
+}
+
+
+      
+    </style>
+   </head>
+   <body>
+    
+      
+    <table>
+  <thead>
+    <tr>
+      <th>Fav
+      <th>Rank#
+      <th>Image
+      <th>name
+      <th>Symbol
+      <th>current Price
+      <th>1 h
+      <th>24 h
+      <th>7 d
+      <th>Volume 24 h
+      <th>Capitalisation
+      <th>7days  
+  </thead>
+  <tbody>
+    <tr>
+      <td>1
+      <td>Malcolm
+      <td>Reynolds
+      <td>Mal, Cap'n
+      <td>M
+      <td>Captain
+      <td>Yes
+    <tr>
+      <td>2
+      <td>Zoe
+      <td>Washburn
+      <td>Zoe
+      <td>F
+      <td>First Mate
+      <td>Yes
+    <tr class="disabled">
+      <td>3
+      <td>Hoban
+      <td>Washburn
+      <td>Wash
+      <td>M
+      <td>Pilot
+      <td>No
+    <tr>
+      <td>4
+      <td>Kaylee
+      <td>Frye
+      <td>Kaylee
+      <td>F
+      <td>Mechanic
+      <td>Yes
+    <tr>
+      <td>5
+      <td>Jayne
+      <td>Cobb
+      <td>Jayne
+      <td>M
+      <td>Muscle
+      <td>Yes
+    <tr class="disabled">
+      <td>6
+      <td>[unknown]
+      <td>Book
+      <td>Shepherd
+      <td>M
+      <td>Passenger
+      <td>No
+    <tr>
+      <td>7
+      <td>Simon
+      <td>Tam
+      <td>Simon
+      <td>M
+      <td>Passenger
+      <td>Yes
+    <tr>
+      <td>8
+      <td>River
+      <td>Tam
+      <td>River
+      <td>F
+      <td>Passenger
+      <td>Yes
+  </tbody>
+</table>
+    <script>
+      let BASE_URL = "https://api.coingecko.com/api/v3/";
+      let COINS_ENDPOINT = "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y";
+      let allCoinsUrl = BASE_URL + COINS_ENDPOINT; 
+
+
+    fetch(allCoinsUrl)
+    .then(res =>{
+      res.json().then(data =>{
+        console.log(data[1]);
+        //$("#content").html(data[0])
+      })
+    })
+    .catch(err => {
+      //$("#listContent").html(err);
+    });
+ 
+
+
+
+    /*var mybr = document.createElement('br');
+		document.body.appendChild(mybr);
+    
+    var image = "<img src=https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880/>";
+
+    var market = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum"
+
+    console.log (market);
+    
+
+		fetch(market)
+    .then(res => {
+     	res.json().then(data => {				
+      	console.log(data[0].market_cap_change_24h);
+    		if(data[0].market_cap_change_24h >=0){
+    			document.getElementById("24hChange").style.color ="green";
+    			$("#24hChange").html(image + "'s market cap has grown by "+ data[0].market_cap_change_24h + " $ in the past 24 hours.");
+    		}else{
+    			document.getElementById("24hChange").style.color ="red";
+    			$("#24hChange").html(image +"'s market cap has schrink by " + data[0].market_cap_change_24h + " $ in the past 24 hours.")}
+    		})});
+    console.log (image)*/
+  </script>
+  </body>									
+</html>											
