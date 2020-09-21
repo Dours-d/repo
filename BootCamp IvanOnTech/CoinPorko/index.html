@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/240a555934.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <link href='https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
     <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -100,13 +101,28 @@
       body {  
         background-color: #e5bc8b;  
       }
+      :root {
+        font: 400 16px/1.5 Verdana;
+      }
+      button {
+        display: inline-block;
+        font: inherit;
+        padding: 0px 5px;
+        cursor: pointer;
+      }
+
+      button::after {
+      content: ' Favorite'
+      }
+      
+
       </style>
     </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" style= "display:flex; flex-direction: row;" href="#">
-    <img src="/227288-200.png"
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.thenounproject.com%2Fpng%2F227288-200.png&f=1&nofb=1"
       width="55"
       height="55"
     /><h1>CoinPorko Market Cop</h1>
@@ -173,7 +189,7 @@
       <th>Capitalisation
       <th>7days  
                 </thead>
-                <tbody id= Page1>      
+                <tbody id= myTable>      
       
       
                 </tbody>
@@ -212,25 +228,31 @@
                     newRow = table.insertRow(i);
                     for(j=0;j<=11;j++){
                       newCell = row.insertCell(j);
-                      //newContent = 
-
-
-                                    }
+                      var myImage = new Image(50, 50);
+                      myImage.src= (data[i].image);
+                      if (j=2) {document.createElement("myImage")};
+                      else if (j==3) {document.createElement("(data[i].name)")};
+                      else if (j==4) {document.createElement("(data[i].symbol)")};
+                      else if (j==5) {document.createElement("(data[i].current_price)" + " $US")};
+                      else if (j==6) {document.createElement("(data[i].price_change_percentage_1h_in_currency)" + " %")};
+                      else if (j==7) {document.createElement("(data[i].price_change_percentage_7d_in_currency)" + " %")};
+                      else if (j==8) {document.createElement("(data[i].price_change_percentage_24h_in_currency)"+ " %")};
+                      else if (j==9) {document.createElement("(data[i].total_volume)" + " $US")};
+                      else if (j==10) {document.createElement("(data[i].market_cap)" + " $US")};
+                      else if (j==11) {document.createElement("(sparkline_in_7d)")};
+                      else if (j==0) {document.createElement("i")};
+                      else if (j==1) {document.html("<button><i class="fa fa-star-o"></i></button>");
+                                     document.querySelector('button').addEventListener('click', fav);
+                                     };
                     }
-                  })
-                })
-    
-    .then(res =>){
-      res.json().then(data =>{
-                let myImage= new Image(50, 50)
-                myImage.src= (data[0].image);
-                document.table.appendChild(myImage)
+                  }
       })
-    };
-        
-        
-
-
+    })
+    function fav(e) {
+  const tgt = e.target.firstElementChild;
+  tgt.classList.toggle('fa-star');
+  tgt.classList.toggle('fa-star-o');
+}
         console.log(
                     image,
                     data[i].name,
@@ -244,15 +266,41 @@
                     data[i].sparkline_in_7d);
         console.log(data[1]);     
             
-            
-          
+//**********************************************Code for toggle star Font-awesome********************************************************
+
+       /* document.querySelector('button').addEventListener('click', fav);
+
+function fav(e) {
+  const tgt = e.target.firstElementChild;
+  tgt.classList.toggle('fa-star');
+  tgt.classList.toggle('fa-star-o');
+}
+:root {
+  font: 400 16px/1.5 Verdana;
+}
+
+button {
+  display: inline-block;
+  font: inherit;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+button::after {
+  content: ' Favorite'
+}
+<link href='https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+
+<button>
+  <i class="fa fa-star-o"></i>
+</button>  /****************************************Bin***************************************************************************************************************
         //$("#content").html(data[0])
       
     
   
-    .catch(err => {
+   // .catch(err => {
       //$("#listContent").html(err);
-    });
+    //});
  
     /*var mybr = document.createElement('br');
     document.body.appendChild(mybr);
@@ -275,7 +323,7 @@
           document.getElementById("24hChange").style.color ="red";
           $("#24hChange").html(image +"'s market cap has schrink by " + data[0].market_cap_change_24h + " $ in the past 24 hours.")}
         })});
-    console.log (image)*/
+    console.log (image)************************************************************************************************************************/
   </script>
   </body>                 
 </html> 
