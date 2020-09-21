@@ -174,28 +174,23 @@
             <p style ="background-color: #A3856C" class="list-group-flush">
               <table id=myTable style="background-image: linear-gradient(
                   to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f");>
-                <thead>
+                
                   <tr>
-      <th>Fav
-      <th>Rank#
-      <th>Image
-      <th>Name
-      <th>Symbol
-      <th>Current Price
-      <th>1h
-      <th>24h
-      <th>7d
-      <th>Volume 24h
-      <th>Capitalisation
-      <th>7days  
-                </thead>
-                <tbody id= myTable>      
-      
-      
-                </tbody>
-              </table> 
-            </p>
-        </div>
+      <th scope="col" class="text-left"><a href="#" name="Fav">Fav</a></th>
+      <th scope="col" class="text-left"><a href="#" name="Rank">#</a></th>
+      <th scope="col" class="text-left"><a href="#" name="Logo"></a></th>
+      <th scope="col" class="text-left"><a href="#" name="name">Name</a></th>
+      <th scope="col" class="text-left"><a href="#" name="symbol">symbol</a></th>
+      <th scope="col" class="text-right"><a href="#" name="current_price">Price</a></th>
+      <th scope="col" class="text-left"><a href="#" name="symbol">%change 1h</a></th>
+      <th scope="col" class="text-left"><a href="#" name="symbol">%change 24h</a></th>
+      <th scope="col" class="text-left"><a href="#" name="symbol">%change 7d</a></th>
+      <th scope="col" class="text-right"><a href="#" name="total_volume">Volume (24h)</a></th>
+      <th scope="col" class="text-right"><a href="#" name="market_cap">Market Cap</a></th>
+      <th scope="col" class="text-right"><a href="#" name="sparkline 7d">7d</a></th>
+                </table> 
+              </p>
+          </div>
         <div class="tab-pane fade" id="profile">
             <h4 class="mt-2">Exchanges tab content</h4>
             <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
@@ -208,13 +203,52 @@
 </div>
   <script>
     
-
-
-
-
+  $(document).ready(function() {
     let BASE_URL = "https://api.coingecko.com/api/v3/";
-    let COINS_ENDPOINT = "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&Price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y";
-    let allCoinsUrl = BASE_URL + COINS_ENDPOINT; 
+    let COINS_ENDPOINT = "";
+
+    let pageSize = 100;
+    let curPageNum = 0;
+
+  populateTable();
+
+  function getData(){
+    ENDPOINT = "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${pageSize}&page=${curPageNum}&sparkline=true&Price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d%2C%20200d%2C%201y";
+    let url = BASE_URL + ENDPOINT;
+    return fetch(url)
+    .then(function (response) {
+        return response.json();
+    }).catch(function (error) {
+        console.log(error);
+    });
+  }
+
+  async function populateTable () {
+    let coin = await getData();
+    const coinTable = $('#myTable');
+    for(let i=0;i<pageSize;i++){
+      coinTable.append(
+        $('<tr class="content-row"></tr>').append(
+          $('<td class="text-left"></td>').html("<button><i class="fa fa-star-o"></i></button>"),
+          $('<td class="text-left"></td>').text(coin[i].image),           
+          $('<td class="text-left"></td>').text(i+1), //rank#
+          $('<td class="text-left"></td>').text(coin[i].name),
+          $('<td class="text-left"></td>').text(coin[i].symbol),
+          $('<td class="text-left"></td>').text((coin[i].current_price).toFixed(2) + " " + "$"),
+          $('<td class="text-left"></td>').text((coin[i].price_change_percentage_1h_in_currency).toFixed(2) + " %"),  
+          $('<td class="text-left"></td>').text((coin[i].price_change_percentage_24h_in_currency).toFixed(2) + " %"),
+          $('<td class="text-left"></td>').text((coin[i].price_change_percentage_7d_in_currency).toFixed(2) + " %"),
+          $('<td class="text-left"></td>').text((coin[i].total_volume).toFixed(2) + "$US"),
+          $('<td class="text-left"></td>').text(coin[i].market_cap),
+          $('<td class="text-left"></td>').text(coin[i].sparkline_in_7d),
+        )
+  
+      )
+      
+    }
+  }
+
+    /*let allCoinsUrl = BASE_URL + COINS_ENDPOINT; 
     // Find a <table> element with id="myTable":
     var table = document.getElementById("myTable");
     var newRow = 0; 
@@ -242,18 +276,20 @@
                       else if (j==11) {document.createElement("(sparkline_in_7d)")};
                       else if (j==0) {document.createElement("i")};
                       else if (j==1) {document.html("<button><i class="fa fa-star-o"></i></button>");
-                                     document.querySelector('button').addEventListener('click', fav);
+                                     
                                      };
                     }
                   }
       })
-    })
-    function fav(e) {
-  const tgt = e.target.firstElementChild;
-  tgt.classList.toggle('fa-star');
-  tgt.classList.toggle('fa-star-o');
-}
-        console.log(
+    })*/
+  document.querySelector('button').addEventListener('click', fav);
+    
+  function fav(e) {
+    const tgt = e.target.firstElementChild;
+    tgt.classList.toggle('fa-star');
+    tgt.classList.toggle('fa-star-o');
+  }
+          /*console.log(
                     image,
                     data[i].name,
                     data[i].symbol,
@@ -264,7 +300,7 @@
                     data[i].total_volume + " $US", 
                     data[i].market_cap + " $US", 
                     data[i].sparkline_in_7d);
-        console.log(data[1]);     
+        console.log(data[1]);*/     
             
 //**********************************************Code for toggle star Font-awesome********************************************************
 
