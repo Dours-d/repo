@@ -1,0 +1,99 @@
+/******************************************CODE of THE TABLE***********************************************/
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+      *, *:before, *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+      body {
+          background: #105469;
+          font-family: 'Open Sans', sans-serif;
+      }
+      table {
+          background: #012B39;
+          border-radius: 0.05em;
+          border-collapse: collapse;
+          margin: 1em;
+      }
+      th {
+          border-bottom: 1px solid #364043;
+          color: #343a40;
+          font-size: 0.85em;
+          font-weight: 600;
+          padding: 0.5em 1em;
+          text-align: left;
+      }
+      td {
+        color: #343a40;
+        font-weight: 400;
+        padding: 0.65em 1em;
+      }
+      .disabled td {
+        color: #4F5F64;
+      }
+      tbody tr {
+        transition: background 0.75s ease;
+      }
+      tbody tr:hover {
+        background: #F6A259;-webkit-filter: invert(50%);
+        filter: invert(100%);
+      }
+
+
+      
+      /***************************************CODE of THE CONTAINER*****************************************/
+      .bs-example{
+      margin: 20px;
+      }
+      .mr-auto { style="display:flex; 
+        align-items: stretch; 
+        flex-wrap: wrap;
+
+      }
+      .container {background-image: linear-gradient(to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f );}
+
+      .a{ color: white; mix-blend-mode: difference; }
+      
+
+
+      #coin {
+        background-image: linear-gradient(to right,#d24d54, #F6A259, #F2F3E9, #43ADC5, #584d4f ); } 
+      
+      .p { 
+        color: white; mix-blend-mode: difference;
+      }
+      #tab {
+        color: #343a40;
+      }
+
+      h1 {size: 1em;
+        color: #343a40;
+        margin: 5px;
+        cursor: pointer;
+      } 
+      
+      h1:hover {
+        background: #48C7A0;
+      }
+      h2{
+        color:#343a40;
+      }
+      body {  
+        background-color: #e5bc8b;  
+      }
+      :root {
+        font: 400 16px/1.5 Verdana;
+      }
+      button {
+        display: inline-block;
+        font: inherit;
+        padding: 0px 5px;
+        cursor: pointer;
+      }
+
+      button::after {
+      content: 'Favorite'
+      }
+      

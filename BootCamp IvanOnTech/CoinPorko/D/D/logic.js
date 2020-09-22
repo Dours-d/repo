@@ -22,9 +22,13 @@ $(document).ready(function() {
     let coin = await getData();
     const coinTable = $('#coinTable');
     for(let i=0;i<pageSize;i++){
+      var myImage = new Image(30, 30);
+      myImage.src = (coin[i].image).html;
+
       coinTable.append(
         $('<tr class="content-row"></tr>').append(
           $('<td class="text-left"></td>').text(i+1),
+          $('<td class="text-left"></td>').text(coin[i].image),
           $('<td class="text-left"></td>').text(coin[i].name),
           $('<td class="text-left"></td>').text(coin[i].market_cap),
           $('<td class="text-left"></td>').text((coin[i].current_price).toFixed(2) + " " + "$"),
@@ -35,4 +39,4 @@ $(document).ready(function() {
       )
     }
   }
-})
+});
