@@ -40,8 +40,10 @@
         background: #F6A259;-webkit-filter: invert(50%);
         filter: invert(100%);
       }
+      /***************************************CODE of THE Table****************************************/
+      #tokenIcon{
 
-
+      }
       
       /***************************************CODE of THE CONTAINER*****************************************/
       .bs-example{
@@ -52,7 +54,7 @@
         flex-wrap: wrap;
 
       }
-      .container {background-image: linear-gradient(to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f );}
+      #container {background-image: linear-gradient(to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f );}
 
       .a{ color: white; mix-blend-mode: difference; }
       
