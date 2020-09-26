@@ -40,7 +40,7 @@ $(document).ready(function() {
           $('<td class="text-right"></td>').text(i+1),
           $('<td class="text-center"></td>').html(img),
           $('<td class="text-left"></td>').text(coin[i].name),
-          $('<td class="text-center"></td>').text((coin[i].symbol).toUppercase()),
+          $('<td class="text-center"></td>').text((coin[i].symbol).toUpperCase()),
           $('<td class="text-center"></td>').text(new Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(coin[i].current_price)),
           $('<td class="text-left"></td>').text((coin[i].price_change_percentage_1h_in_currency).toPrecision(2) + " %"),
           $('<td class="text-left"></td>').text((coin[i].price_change_percentage_24h_in_currency).toPrecision(2) + " %"),

@@ -63,20 +63,35 @@
         flex-wrap: wrap;
 
       }
-      #container {background-image: linear-gradient(to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f );}
+
+      .tab-content{
+        padding: 0px;
+      }
+
+      div.container{
+        margin: auto;
+        padding: 0px
+        background-image: linear-gradient(to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f)
+      }
+
+      #container {
+
+      }
 
       .a{ color: white; mix-blend-mode: difference; }
       
+      #coinTable{
+        margin: 0px;
+      }
 
-
-      #coin {
-        background-image: linear-gradient(to right,#d24d54, #F6A259, #F2F3E9, #43ADC5, #584d4f ); } 
+      
       
       .p { 
         color: white; mix-blend-mode: difference;
       }
       #tab {
         color: #343a40;
+        border-radius: 0px;
       }
 
       h1 {size: 1em;
@@ -92,21 +107,15 @@
         color:#343a40;
       }
       body {  
-        background-color: #e5bc8b;  
+        background-image: linear-gradient(to left,#d24d54,#F6A259,#F2F3E9,#43ADC5,#584d4f );
+        display: flex; flex-direction: column;  
       }
       :root {
         font: 400 16px/1.5 Verdana;
       }
-      button {
-        display: inline-block;
-        font: inherit;
-        padding: 0px 5px;
-        cursor: pointer;
-      }
+      
 
-      button::after {
-      content: 'Favorite'
-      }
+      
     </style>  
 
     <script type=”text/javascript”></script>
@@ -122,9 +131,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" style= "display:flex; flex-direction: row; justify-self: center" href="#">
+    <nav class="navbar navbar-expand-lg-12 navbar-dark bg-dark static-top">
+      <a class="navbar-brand-12" style= "display:flex;" href="#">
       <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.thenounproject.com%2Fpng%2F227288-200.png&f=1&nofb=1"
       width="55"
       height="55"
@@ -141,22 +149,21 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cryptocurrencies</a>
+          <a class="nav-link" href="index.html">Cryptocurrencies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Exchanges</a>
+          <a class="nav-link" href="index.html">Exchanges</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Yield Farming <i class="fas fa-poo-storm"></i></a>
+          <a class="nav-link" href="index.html">Yield Farming <i class="fas fa-poo-storm"></i></a>
         </li>
       </ul>
-    </div>
     </div>
   </nav>
 
 <!-- Page Content -->
   <div class="container" style="display:flex; flex-direction : row; justify-content: center">
-    <h2 class="mt-5">Top 100 Cryptocurrencies by Market Capitalization</h2>
+    <h2 class="mt-5">Top 100 Cryptocurrencies</h2>
   </div>
   <div class="container" style="display:flex; flex-direction:row; justify-content: center;">
   <div style="color:#343a40"class="bs-example">
@@ -194,22 +201,63 @@
             </p>
         </div>
         <div class="tab-pane fade" id="profile">
-            <h4 class="mt-2">Exchanges tab content</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h4 class="mt-2"></h4>
+            <div class="container" style="display:flex; flex-direction : row; justify-content: center">
+      </div>
+  
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+          <h4 class="mt-2"></h4>
+            <p style ="background-color: #A3856C" class="list-group-flush">
+              <table id=coinTable style="background-image: linear-gradient(
+                  to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f" border=1);>
+                <tr>
+      <th scope="col" class="text-left"><div href="#" name="Rank">#</div></th>
+      <th scope="col" class="text-left"><div id="tokenIcon" href="#" name="Logo">Logo</div></th>
+      <th scope="col" class="text-center"><div href="#" name="name">Name</div></th>
+      <th scope="col" class="text-left"><div href="#" name="symbol">ticker</div></th>
+      <th scope="col" class="text-center"><div href="#" name="current_price">Price</div></th>
+      <th scope="col" class="text-center"><div href="#" name="1h">% change 1h</div></th>
+      <th scope="col" class="text-center"><div href="#" name="24h">% change 24h</div></th>
+      <th scope="col" class="text-center"><div href="#" name="7d">% change 7d</div></th>
+      <th scope="col" class="text-center"><div href="#" name="total_volume">Volume (24h)</div></th>
+      <th scope="col" class="text-center"><div href="#" name="market_cap">Market Cap</div></th>
+      <th scope="col" class="text-center"><div href="#" name="sparkline 7d">7d</div></th>
+                </tr>
+              </table> 
+            </p>
+        </div>
         </div>
         <div class="tab-pane fade" id="messages">
-            <h4 class="mt-2">Watch list tab content</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h4 class="mt-2"></h4>
+            <p><div class="tab-pane fade" id="profile">
+            <h4 class="mt-2"></h4>
+            <div class="container" style="display:flex; flex-direction : row; justify-content: center">
+      </div>
+  
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+          <h4 class="mt-2"></h4>
+            <p style ="background-color: #A3856C" class="list-group-flush">
+              <table id=coinTable style="background-image: linear-gradient(
+                  to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f" border=1);>
+                <tr>
+      <th scope="col" class="text-left"><div href="#" name="Rank">#</div></th>
+      <th scope="col" class="text-left"><div id="tokenIcon" href="#" name="Logo">Logo</div></th>
+      <th scope="col" class="text-center"><div href="#" name="name">Name</div></th>
+      <th scope="col" class="text-left"><div href="#" name="symbol">ticker</div></th>
+      <th scope="col" class="text-center"><div href="#" name="current_price">Price</div></th>
+      <th scope="col" class="text-center"><div href="#" name="1h">% change 1h</div></th>
+      <th scope="col" class="text-center"><div href="#" name="24h">% change 24h</div></th>
+      <th scope="col" class="text-center"><div href="#" name="7d">% change 7d</div></th>
+      <th scope="col" class="text-center"><div href="#" name="total_volume">Volume (24h)</div></th>
+      <th scope="col" class="text-center"><div href="#" name="market_cap">Market Cap</div></th>
+      <th scope="col" class="text-center"><div href="#" name="sparkline 7d">7d</div></th>
+                </tr>
+              </table> 
+            </p>
+        </div>
+        </div>
         </div>
     </div>
 </div>
