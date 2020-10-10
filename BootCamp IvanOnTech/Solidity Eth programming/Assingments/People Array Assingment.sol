@@ -1,18 +1,19 @@
 pragma solidity 0.5.12;
 
-contract HelloWorld{
+contract People{
 
     struct Person {
       uint id;
       string name;
+      address creator;
       uint age;
       uint height;
       bool senior;
     }
 
-    uint[] public people = ["Musi", "Mama", "Dours"];}
+    Person[] private people;
 
-    function createPerson(string memory name, uint age, uint height) public {
+    function createPerson(string memory name, uint id, uint age, uint height) public {
         //This creates a person
         Person memory newPerson;
         newPerson.name = name;
@@ -21,21 +22,17 @@ contract HelloWorld{
 
         if(age >= 65){
            newPerson.senior = true;
-       }
-       else{
+        }
+        else{
            newPerson.senior = false;
-       }
-
-        insertPerson(newPerson);
-    }
-    function insertPerson(Person memory newPerson) private {
-        address creator = msg.sender;
-        people[creator] = newPerson;
-    }
-    function getPerson() public view returns(string memory name, uint age, uint height, bool senior){
-        address creator = msg.sender;
-        return (people[creator].name, people[creator].age, people[creator].height, people[creator].senior);
+        }
+        people.push(newPerson); 
     }
 
-}
-
+    function getPerson(ID) public view returns(string memory name, uint id, uint age, uint height){
+        for (uint i=0; i < people.length; i++){
+            if(people[i].id ==ID){
+                return Person[i].name;
+            }
+        }
+    }
