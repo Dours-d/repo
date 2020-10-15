@@ -13,10 +13,8 @@ contract Test1 {
       testing[msg.sender].numbers.push(_newNumber);
   }
 
-  function getNumbers (address) public view returns (uint){
-    for (i=0; i<=numbers.length;i++){
-      return (testing.numbers[i]);
+  function getNumbers () public view returns (uint[] memory){
+    return testing[msg.sender].numbers;
         }
   }
-}
  
