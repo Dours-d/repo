@@ -17,9 +17,9 @@ contract Test0 {
     		return owners[_owner].isOwner;
     }
 
-    function addAge (uint256 _age) public {
-    	    if (_age >20){
-    	    Owner.age = _age;
+    function add (address _toAdd) public {
+    	if (_age >=20){
+    	    owners[_toAdd].age = 20;
             }
     }
 }

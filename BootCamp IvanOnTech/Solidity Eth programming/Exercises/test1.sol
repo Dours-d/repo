@@ -17,13 +17,17 @@ contract Test1 {
   }
 
   mapping (address => Person) people;
+  
 
-  function createPerson (string memory name, uint8 id, uint256 registrationTimeStamp ) public {
+  function createPerson (string memory _name, uint8 memory _id, uint256 memory _registrationTimeStamp ) public {
+        
         //This creates a person
         Person memory newPerson;
-        newPerson.name = name;
-        newPerson.id = id;
-        newPerson.registrationTimeStamp = registrationTimeStamp;
-
+        newPerson.name = _name;
+        newPerson.id = _id;
+        id++;
+        _registrationTimeStamp = now
+        newPerson.registrationTimeStamp = _registrationTimeStamp;
+        
   }
 }

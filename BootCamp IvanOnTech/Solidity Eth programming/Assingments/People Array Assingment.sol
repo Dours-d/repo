@@ -29,10 +29,8 @@ contract People{
         people.push(newPerson); 
     }
 
-    function getPerson(ID) public view returns(string memory name, uint id, uint age, uint height){
-        for (uint i=0; i < people.length; i++){
-            if(people[i].id ==ID){
-                return Person[i].name;
-            }
-        }
+    function getPerson(address ins) public view returns (string memory, uint, uint){
+      return (people[ins].name, people[ins].age, people[ins].height);
+        
     }
+}    
