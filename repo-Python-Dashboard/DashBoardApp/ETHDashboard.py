@@ -49,32 +49,27 @@ class ETHTicker:
 		down_label = Label(text=(text5 + '\n' + text5b),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg='white')
 		down_label.grid(row=4, column=1, sticky=W)
 
-		date_time_obj =  "{:,.2f}".format(average_block_time)
-		text5a = "Avg block time: " + str(date_time_obj) + " sec  "
-		down_label = Label(text=(text5a + '\n'),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg='white')
-		down_label.grid(row=5, column=1, sticky=W)
-
 		title = "My DeFi wallet"
 		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('ugotic UI', 28, 'bold'), bg='black', fg='gold')
-		down_label.grid(row=6, column=1, sticky=W)
+		down_label.grid(row=5, column=1, sticky=W)
 
 		currency = "${:,.1f}".format(defilockedusd)
 		text10 = "Value locked: " + str(currency) + " B  "
 		currency = "${:,.1f}".format(dominance_valueusd)
 		text11 = str(dominance_name) + " locked: " + str(currency)  + " B  "
 		down_label = Label(text=(text10 + '\n' + text11),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg='white')
-		down_label.grid(row=7, column=1, sticky=W)
+		down_label.grid(row=6, column=1, sticky=W)
 
 		currency = "{:,.0f}".format(TVLBTC)
 		text12 = "BTC locked: " + str(currency) + u'\u20bf'
 		currency = "{:,.0f}".format(LNDBTC)
 		text12a = "Lightning volume: " + str(currency) + u'\u20bf'
 		down_label = Label(text=(text12 + '\n' + text12a + '\n'),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg='white')
-		down_label.grid(row=8, column=1, sticky=W)
+		down_label.grid(row=7, column=1, sticky=W)
 		
 		title = ""
 		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('Helvetica', 28, 'bold'), bg='black', fg='gold')
-		down_label.grid(row=9, column=1, sticky=W)
+		down_label.grid(row=8, column=1, sticky=W)
 
 		text98 = str(errormessage)
 		down_label = Label(text=(text98),anchor=NW, justify=LEFT,font=('Helvetica',14), bg='black', fg='red')
