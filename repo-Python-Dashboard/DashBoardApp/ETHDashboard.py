@@ -5,6 +5,7 @@ import sys
 import time
 import datetime
 from urllib.request import urlopen
+from collections import defaultdict
 from json import loads
 
 # this is where the display is being created
@@ -21,7 +22,7 @@ class ETHTicker:
 		hwg()
 		internet_on()
 		title = "Global data"
-		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('ugotic UI', 28, 'bold'), bg='black', fg='gold')
+		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('ugotic', 28, 'bold'), bg='black', fg='gold')
 		down_label.grid(row=1, column=1, sticky=W)
 
 		if priceeth1hrchange *100 > price1hrchangediff:
@@ -64,13 +65,19 @@ class ETHTicker:
 		text12 = "BTC locked: " + str(currency) + u'\u20bf'
 		currency = "{:,.0f}".format(LNDBTC)
 		text12a = "Lightning volume: " + str(currency) + u'\u20bf'
-		down_label = Label(text=(text12 + '\n' + text12a + '\n'),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg='white')
+		down_label = Label(text=(text12 + '\n' + text12a),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg='white')
 		down_label.grid(row=7, column=1, sticky=W)
 		
-		title = ""
-		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('Helvetica', 28, 'bold'), bg='black', fg='gold')
+		title = "My ERCs"
+		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('ugotic UI', 20, 'bold'), bg='black', fg='darkorchid4')
 		down_label.grid(row=8, column=1, sticky=W)
-
+		
+		for token_name in eth_token_totals:
+			if eth_token_totals[token_name] > -1.00001:
+				text12 = token_name + eth_token_totals[token_name]
+				down_label = Label(text=(text12),anchor=NW, justify=LEFT,font=('Helvetica',20, 'bold'), bg='black', fg='white')
+				down_label.grid(row=9, column=1, sticky=W) 
+		
 		text98 = str(errormessage)
 		down_label = Label(text=(text98),anchor=NW, justify=LEFT,font=('Helvetica',14), bg='black', fg='red')
 		down_label.grid(row=27, column=1, sticky=W)
@@ -80,7 +87,7 @@ class ETHTicker:
 		text99 = "Current time: " + str(now)
 		down_label = Label(text=(text99),anchor=NW, justify=LEFT,font=('Helvetica',12), bg='black', fg='white')
 		down_label.grid(row=28, column=1, sticky=W)
-	
+			
 # This is where you set the update time. 290000 is about 5 minutes	
 		down_label.after(290000,ETHTicker.labels)
 
@@ -266,6 +273,25 @@ def internet_on(url='http://www.google.com/', timeout=5):
 		errormessage = "No internet connection available."
 	return False
 
+eth_token_totals = defaultdict(lambda : 0)
+address ='0xE85a4A5483139Ea4bf30728AE6Efe7a8cA7f447f'
+url = 'https://api.etherscan.io/api?module=account&action=tokentx&address='+address+'&startblock=0&endblock=999999999&sort=asc&apikey=YourApiKeyToken'
+response = requests.get(url)
+address_content = response.json()
+result = address_content.get("result")
+for transaction in result:
+	tx_from = transaction.get("from")
+	tx_to = transaction.get("to")
+	value = int(transaction.get("value"))
+	decimals = int(transaction.get("tokenDecimal"))
+	token_name = transaction.get("tokenName")
+	gasprice = transaction.get("gasPrice")
+	token_symbol = transaction.get("tokenSymbol")
+	real_value = value * 10 ** (decimals * -1)
+	if tx_to == address.lower():
+		eth_token_totals[token_name] += real_value
+	else:
+		eth_token_totals[token_name] += (real_value * -1)
 
 exec(open(r"variables").read())
 errormessage=""
