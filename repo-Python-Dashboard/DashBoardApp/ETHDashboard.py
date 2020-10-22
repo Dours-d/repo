@@ -74,9 +74,9 @@ class ETHTicker:
 		
 		for token_name in eth_token_totals:
 			if eth_token_totals[token_name] > -1.00001:
-				text12 = token_name + eth_token_totals[token_name]
-				down_label = Label(text=(text12),anchor=NW, justify=LEFT,font=('Helvetica',20, 'bold'), bg='black', fg='white')
-				down_label.grid(row=9, column=1, sticky=W) 
+				text12 = token_name + "\n" + str(eth_token_totals[token_name])
+				down_label = Label(text=(text12),justify=LEFT,font=('Helvetica',20, 'bold'), bg='black', fg='white')
+				#down_label.grid(row=9, column=1, sticky=W) 
 		
 		text98 = str(errormessage)
 		down_label = Label(text=(text98),anchor=NW, justify=LEFT,font=('Helvetica',14), bg='black', fg='red')
