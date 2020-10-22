@@ -1,5 +1,5 @@
 # your defipulse API key. 
-defipulseApikey = "3c078480f89a7fa220f2b91a7244ea17b5bab77e3cff6b0fa1e2d0ed22c"
+defipulseApikey = "b6c7da4d44fd8ec98a909358a84beff842eaaa0b6f109256cc52daed3452"
 
 #display tresholds (change color if x value increased more than y%). 
 price1hrchangediff = 1    # checked once / hr
