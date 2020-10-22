@@ -12,7 +12,7 @@ class BTCTicker:
 		self.master = master
 		self.close_button = Button(image=btclogo, command=self.close)
 		self.close_button.grid(row=0, column=0)
-		self.label = Label(master, text=("BTC Dashboard"), font=('Helvetica',32, 'bold'), fg='black', bg = 'gold')
+		self.label = Label(master, text=("ETH Portofolio"), font=('lucida handwriting',32, 'bold'), fg='black', bg = 'darkorchid4')
 		self.label.grid(row=0, column=1)
 
 	def labels():
@@ -29,21 +29,23 @@ class BTCTicker:
 
 		hwg()
 		internet_on()
-		title = "Market Data"
-		down_label = Label(text=(title),anchor=NW, justify=LEFT,font=('Helvetica', 28, 'bold'), bg='black', fg='gold')
-		down_label.grid(row=2, column=1, sticky=W)
+		title = "Wallet data"
+		down_label = Label(text=(title), anchor=NW, justify=LEFT,font=('Helvetica', 28, 'bold'), bg='black', fg='gold')
+		down_label.grid(row=3, column=1)
 
-		if pricebtc1hrchange * 100 > disppricebtc1hrchangediff:
+		if priceeth1hrchange *100 > price1hrchangediff:
 				color = "lightgreen"
-		elif pricebtc1hrchange * 100 < disppricebtc1hrchangediff * -1:
+		elif priceeth1hrchange * 100 < price1hrchangediff * -1:
 				color = "lightcoral"
 		else:
 				color = "white"
-		currency = "{:,.2f}".format(pricebtc)
-		text1 = "BTC Price: $" + str(currency)
+		percentage = "{:,.1%}".format(priceeth1hrchange)
+		percentage2 = "{:,.1%}".format(priceeth24hrchange)
+		currency = "{:,.2f}".format(priceeth)
+		text1 = "ETH Price: " + str(currency) + "   (" + str(percentage) + " / " + str(percentage2) + ")"
 		down_label = Label(text=(text1),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg = color)
 		down_label.grid(row=3, column=1, sticky=W)
-   
+
 		currency = "{:,.2%}".format(pricebtc24hrchange)
 		text2 = "24hr change: " + str(currency)
 		down_label = Label(text=(text2),anchor=NW, justify=LEFT,font=('Helvetica',20), bg='black', fg = "white")
@@ -218,6 +220,41 @@ def hwg():
 	satsusd = 0
 	suggested_transaction_fee = 0
 	
+	global priceeth
+	global priceeth1hrchange
+	global priceeth24hrchange
+	#global coin1price24hrchange
+	#global coin2price24hrchange
+	#global coin1symbol
+	#global coin2symbol
+	#global marketcapeth
+	#global marketcap24h
+	#global coin1price
+	#global coin2price
+	#global market_dominance_percentage
+	#global average_gasfee
+	#global defilockedusd
+	#global dominance_name
+	#global dominance_valueusd
+	#global TVLBTC
+	#global LNDBTC
+	#global status
+	#global errormessage
+	#global average_block_time
+	#global average_wait_time
+	#global coin1price1hrchange
+	#global coin2price1hrchange
+	#global defi_market_cap
+
+	defi_market_cap = 0
+	priceeth = 0
+	priceeth1hrchange = 0
+	priceeth24hrchange = 0
+	marketcapeth = 0
+	#marketcap24h = 0
+	#market_dominance_percentage = 0
+	average_gasfee = 0
+
 	try:
 #	get the defipulse Project data 
 		status = 0
@@ -319,7 +356,7 @@ then = datetime.datetime.now()
 root = Tk()
 root.configure(cursor='none', bg='black')
 root.attributes('-fullscreen', True)
-logo = PhotoImage(file=r"btclogo.png")
+logo = PhotoImage(file=r"ethlogo.png")
 btclogo = logo.subsample(23,23)
 my_gui = BTCTicker(root)
 BTCTicker.labels()
