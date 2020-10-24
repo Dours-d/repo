@@ -1,9 +1,6 @@
 
-# your defipulse API key. 
-defipulseApikey = "669edc86074ae466ba8b543b093627465936e9d79251b449667440b0bc8a"
-
 # your defipulse API key. https://data-beta.defipulse.com/dashboard/egs
-defipulseApikey = "669edc86074ae466ba8b543b093627465936e9d79251b449667440b0bc8a"
+defipulseApikey = "6a7e7b0ea265a93ff175b7a67b3462ba3742d5536970215b3b08ca0e8388"
 #defipulseApikey = "eb186b54317ca712f06413fbff21359c742e22ee11c181c692791e1d103a"
 #defipulseApikey = "06f9063a11d3f6d69594c9304d074cde1f92f4dfe86b1668704da3a12cee"
 #defipulseApikey = "93c078480f89a7fa220f2b91a7244ea17b5bab77e3cff6b0fa1e2d0ed22c"
