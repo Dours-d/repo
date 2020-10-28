@@ -12,6 +12,8 @@ contract People{
     }
 
     Person[] private people;
+    mapping (address => uint) nbofpeople;
+    address [] public testArray;
 
     function createPerson(string memory name, uint age, uint height) public {
         //This creates a person
@@ -21,6 +23,7 @@ contract People{
         newPerson.name = name;
         newPerson.age = age;
         newPerson.height = height;
+        nbofpeople[msg.sender] = nbofpeople[msg.sender] + 1;
 
         if(age >= 65){
            newPerson.senior = true;
@@ -35,4 +38,5 @@ contract People{
       return (people[ins].name, people[ins].age, people[ins].height, people[ins].id, people[ins].creator, people[ins].senior);
         
     }
+
 }    

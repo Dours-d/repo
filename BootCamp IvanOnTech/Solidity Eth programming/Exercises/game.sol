@@ -19,7 +19,8 @@ contract Game{
     }
     
     function removePlayer (address _toRemove) public {
-        require (players[_toRemove].isPlayer == true); 
+        require (players[_toRemove].isPlayer == true, 'player not registered'); 
+        require (msg.sender == _toRemove);
         delete(players[msg.sender]);
     }
     
@@ -33,4 +34,6 @@ contract Game{
             return false;
         }
     }
+    
+        
 }
