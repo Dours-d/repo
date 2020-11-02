@@ -12,9 +12,10 @@ contract MemoryAndStorage {
         users[id] = User(id, balance);
     }
 
-    function updateBalance(uint id, uint balance) public returns (bool success){
+    function updateBalance(uint id, uint balance) public {
          users[id].balance = balance;
-         return success;
+         
+         
     }
 
     function getBalance(uint id) view public returns (uint) {
