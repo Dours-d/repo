@@ -24,32 +24,17 @@
      
 
     <script>
-      function howManydays(month){
-  var days = 0 ;
-  switch (n){
-    
-    case 1:  
-    
-      month = 2 ? days = 28     
-      
-      break;
-    
-    case 2:
-    
-      month = 4 || 6 || 9 || 11 ? days = 30
-    
-      break;
+function giveMeFive(obj){
+  var arr = [];
+  for (var key in obj){
+    key.length == 5 ? arr.push(key);
+    obj[key].length == 5 ? arr.push(obj[key])
+      arr.push(obj[key]);
+    }
+  return arr;
+  }
+
   
-   case 3:
-    
-      month = 1 || 3 || 5 || 7 || 8 || 10 || 12 ? days = 31
-    
-      break; 
-}
-  return days;
-}
-      
-      
     </script>
- </body>
+  </body>
 </html>
