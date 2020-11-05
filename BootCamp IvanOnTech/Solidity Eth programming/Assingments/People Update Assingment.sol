@@ -24,7 +24,7 @@ contract HelloWorld{
             uint oldAge = people[msg.sender].age;
             uint oldHeight = people[msg.sender].height;
             bool oldSenior = people[msg.sender].senior;
-        
+            
         newPerson.name = name;
         newPerson.age = age;
         newPerson.height = height;
@@ -39,20 +39,14 @@ contract HelloWorld{
         people[creator] = newPerson;
         
         
-        if (stringsEqual(people[msg.sender].name, oldName)){
-            emit personUpdated(oldId, oldName, oldAge, oldHeight, oldSenior);
-        }else{
+        if (oldHeight == 0){
             emit personCreated(people[creator].name, people[creator].senior); 
+        }else{
+            emit personUpdated(oldId, oldName, oldAge, oldHeight, oldSenior); 
         }
             
         }
-
-    function stringsEqual(string storage _a, string memory _b) view internal returns (bool) {
-        bytes storage a = bytes(_a);
-        bytes memory b = bytes(_b); 
-        if (a.length != b.length) 
-        return false;
-    }
+    
     
     function getPerson() public view returns(string memory name, uint age, uint height, bool senior){
         address creator = msg.sender;
