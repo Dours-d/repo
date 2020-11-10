@@ -1,9 +1,6 @@
-import "./Ownable.sol";
-import "./Destructable.sol";
-
 pragma solidity 0.5.12;
 
-contract HelloWorld is Ownable, Destructable{
+contract HelloWorld is Ownable, Destroyable{
 
     struct Person {
       uint id;
@@ -26,9 +23,8 @@ contract HelloWorld is Ownable, Destructable{
     mapping (address => Person) private people;
     address[] private creators;
 
-    function createPerson(string memory name, uint age, uint height) public payable costs(100 wei){
+    function createPerson(string memory name, uint age, uint height) public payable costs(1 ether){
       require(age < 150, "Age needs to be below 150");
-      require(msg.value >= 100 wei);
       balance += msg.value;
 
         //This creates a person

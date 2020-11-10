@@ -24,7 +24,7 @@ contract HelloWorld is Ownable{
     mapping (address => Person) private people;
     address[] private creators;
 
-    function createPerson(string memory name, uint age, uint height) public payable costs(1 ether){
+    function createPerson(string memory name, uint age, uint height) public payable costs(100 wei){
       require(age < 150, "Age needs to be below 150");
       require(msg.value >= 1 ether);
       balance += msg.value;
