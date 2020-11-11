@@ -74,7 +74,7 @@ contract People is Ownable{
         address creator = msg.sender;
         return (people[creator].name, people[creator].age, people[creator].height, people[creator].senior);
     }
-    function deletePerson(address creator) internal onlyOwner {
+    function deletePerson(address creator) public onlyOwner {
       string memory name = people[creator].name;
       bool senior = people[creator].senior;
 
