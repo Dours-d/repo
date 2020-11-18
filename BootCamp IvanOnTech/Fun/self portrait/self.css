@@ -13,6 +13,7 @@
   background: darkred;
   border-radius: 41% 59% 89% 11% / 92% 3% 97% 8% ;
   transform: rotate(deg);
+  position: relative;
 }
 
 .face {
@@ -20,6 +21,7 @@
   height: 200px;
   background: brown;
   border-radius:40% 60% 17% 83% / 33% 44% 56% 67%;
+  
   top: -135px;
   left: -147px;
 }
@@ -28,6 +30,7 @@
   height: 160px;
   background: lightpink;
   border-radius:40% 60% 17% 83% / 33% 44% 56% 67%;
+  
   top: -135px;
   left: -147px;
   
@@ -41,18 +44,33 @@
   top: 125px;
   right: -86px; 
 }
+
+.capshield{
+  width: 200px;
+  height: 15px;
+  background: black;
+  border-radius: 58% 42% 28% 72% / 52% 50% 50% 48%;
+  position: relative;
+  top: -80px;
+  left: -60px;
+  transform: rotate(-5deg);
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #888888;
+}
+
 .cap{
   width: 220px;
   height: 130px;
   background: black;
   border-radius: 36% 64% 7% 93% / 62% 78% 22% 38%;
-  top: -185px;
-  left: -100px;
-  position: relative;
+  top: -120px;
+  left: -40px;
+  position: absolute;
   transform: rotate(-10deg);
   border: 1px solid;
   padding: 10px;
-  box-shadow: 5px 10px 18px #888888;
+  /*box-shadow: 5px 10px 18px #888888;*/
 }
 
 .queue{
@@ -60,21 +78,25 @@
   height: 200px;
   background: darkred;
   border-radius: 90% 10% 80% 20% / 93% 17% 83% 7%  ;
-  transform: rotate(-220deg);
-  top: 220px;
-  left: -100px;
+  transform: rotate(-210deg);
+  top: 230px;
+  left: -135px;
   position: relative;  
 }
-.bubble{
-  width: 200px;
-  height: 200px;
-  background: grey;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 72% 75%, 98% 91%, 51% 75%, 0% 75%);
-  transform: rotate(230deg);
-  top: -100px;
-  right: 350px;
-  position: absolute;
-}
+
 .h1{ 
   font-weight: 20px;
 }
+
+.teardrop{
+  width: 9px;
+  height: 5px;
+  background: blue;
+  border-radius: 74% 26% 22% 78% / 52% 50% 50% 48% ;
+  transform: rotate(-35deg);
+  position: relative;
+  top: 190px;
+  left: -70px;
+
+}
+
