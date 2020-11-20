@@ -154,40 +154,54 @@
 }
 
 .top{
+	z-index: -1;
 	position: relative;
 	display: flex;
-	top: 81px;
+	top: 132px;
 	left: 0px;
 	
 
 }
-
-
-#left_ear{
+.innerear{
+	position: relative;
 	width: 65px;
 	height: 65px;
-	border-radius: 60% 40% 0% 100% / 64% 99% 1% 36%    ;
+	background :  deeppink;
+	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
+	border-color: black;
+	border: 0.3rem solid;
+	top: 5px;
+	left: 5px;
+}
+
+#left_ear{
+	width: 85px;
+	height: 85px;
+	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
 	background: #ff76aa;
-	margin-right: 50px;
+	margin-right: 160px;
+	
+	
 }
 
 #right_ear{
-	width: 65px;
-	height: 65px;
-	border-radius: 60% 40% 0% 100% / 64% 99% 1% 36%    ;
+	width: 85px;
+	height: 85px;
+	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
 	background: #ff76aa;
-	transform: rotate(90deg);
+	transform: scale(1, -1) rotate(180deg);
 	margin-bottom: 50px;
+	
 	
 
 }
 
 .body{
-	z-index: -1;
+	z-index: -2;
 	position: relative;
 	width: 468px;
 	height: 500px;
@@ -200,46 +214,46 @@
 	left: 208px;
 }
 
-.legs{
-
-}
 
 .leg1{
-	margin-right: 0px;
 	position: relative;
-	width: 20px;
-	height: 200px;
+	width: 131px;
+	height: 184px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(-71deg);
+	top: 219px;
+	left: 314px;
 	background: #ff76aa;
-	border-color: black;
-	border: 0.3rem solid;
-	transform: rotate(112deg);
-	top: 217px;
-	left: 359px;
+	
+	
 }
 
+
+
 .leg2{
+	z-index: -2;
 	position: relative;
-	width: 20px;
-	height: 200px;
+	width: 131px;
+	height: 184px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(-182deg) scale(1,-1);
+	top: 183px;
+	left: 773px;
 	background: #ff76aa;
-	border-color: black;
-	border: 0.3rem solid;
-	transform: rotate(0deg);
-	top: 207px;
-	left: 748px;
 }
 
 .leg3{
-	margin-right: 0px;
 	position: relative;
-	width: 20px;
-	height: 200px;
+	width: 131px;
+	height: 232px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(-71deg);
+	top: 148px;
+	left: 68px;
 	background: #ff76aa;
-	border-color: black;
-	border: 0.3rem solid;
-	transform: rotate(112deg);
-	top: 188px;
-	left: 139px;
 }
 
 .tail{
