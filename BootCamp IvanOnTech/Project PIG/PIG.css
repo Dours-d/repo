@@ -46,8 +46,8 @@
 
 .pupil{
 	position: relative;
-	width: 70px;
-	height: 67px;
+	width: 56px;
+	height: 58px;
 	border-radius: 50%;
 	background: black;
 	top: -3px;
@@ -55,8 +55,8 @@
 }
 
 #left_eye{
-	width: 67px;
-	height: 67px;
+	width: 54px;
+	height: 54px;
 	border-radius: 49% 51% 27% 73% / 37% 47% 53% 63% ;
 	border-color: black;
 	border: 0.3rem solid;
@@ -65,28 +65,29 @@
 
 .lights{
 	position: relative;
-	top: -58px;
-	left: 12px;
+	top: -47px;
+	left: -1px;
+	transform : rotate(-72deg);
 }
 
 .light1{
-	width: 20px;
-	height: 22px;
+	width: 13px;
+	height: 14px;
 	background: white;
 	border-radius: 50%;
 }
 
 .light2{
-	width: 10px;
-	height: 10px;
+	width: 6px;
+	height: 7px;
 	background: white;
 	border-radius: 50%;
 }
 
 
 #right_eye{
-	width: 67px;
-	height: 67px;
+	width: 54px;
+	height: 54px;
 	border-radius: 49% 51% 27% 73% / 37% 47% 53% 63% ;
 	border-color: black;
 	border: 0.3rem solid;
@@ -99,8 +100,8 @@
 	justify-content: center;
 	align-items: center;
 	justify-content: space-around;
-	width: 50px;
-	height: 50px;
+	width: 69px;
+	height: 65px;
 	background: #e92770;
 	border-radius: 50%;
 	margin: 3px;
@@ -140,7 +141,7 @@
   	animation-timing-function: linear;
 }
 
-/* The animation code */
+/* The mouth animation code */
 @keyframes chewing{
   0% {width: 26px;}
   12.5%{width: 47px;}
@@ -151,6 +152,22 @@
   100%{width: 10px;}
 }
 
+/* The ears animation code */
+@keyframes flying_left_ear{
+  0% {transform: rotate(-48deg);}
+  50%{transform: rotate(-29.5deg);}
+  100%{transform: rotate(-11deg);}
+}
+@keyframes flying_right_ear{
+  0% {transform: rotate(-132deg) scale(1, -1);}
+  50%{transform: rotate(-150.5deg) scale(1, -1);}
+  100%{transform: rotate(-169deg) scale(1, -1);}
+}
+@keyframes top_flying{
+  0% {top: 216px;}
+  50%{top: 203.5px;}
+  100%{top: 171px;}
+}
 
 .bottom{
 	display: flex;
@@ -163,15 +180,19 @@
 	z-index: -1;
 	position: relative;
 	display: flex;
-	top: 132px;
+	top: 216px;
 	left: 0px;
+	animation-name: top_flying;
+  	animation-duration: 2s;  	
+  	animation-iteration-count: infinite;
+  	animation-timing-function: linear;
 	
 
 }
 .innerear{
 	position: relative;
-	width: 65px;
-	height: 65px;
+	width: 82px;
+	height: 73px;
 	background :  deeppink;
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
@@ -181,26 +202,35 @@
 }
 
 #left_ear{
-	width: 85px;
-	height: 85px;
+	width: 113px;
+	height: 100px;
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
 	background: #ff76aa;
-	margin-right: 160px;
+	margin-right: 124px;
+	transform: rotate(-48deg);
+	animation-name: flying_left_ear;
+  	animation-duration: 2s;  	
+  	animation-iteration-count: infinite;
+  	animation-timing-function: linear;
+
 	
 	
 }
 
 #right_ear{
-	width: 85px;
-	height: 85px;
+	width: 113px;
+	height: 100px;
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
 	background: #ff76aa;
-	transform: scale(1, -1) rotate(180deg);
 	margin-bottom: 50px;
+	animation-name: flying_right_ear;
+  	animation-duration: 2s;  	
+  	animation-iteration-count: infinite;
+  	animation-timing-function: linear;
 	
 	
 
@@ -209,9 +239,9 @@
 .body{
 	z-index: 0;
 	position: relative;
-	width: 468px;
-	height: 500px;
-	border-radius: 70% 30% 63% 37% / 66% 25% 75% 34%      ;
+	width: 425px;
+	height: 472px;
+	border-radius: 70% 10% 81% 37% / 66% 25% 75% 34%      ;
 	border-color: black;
 	border: 0.3rem solid;
 	background: #ff76aa;
@@ -227,9 +257,9 @@
 	height: 184px;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-71deg);
-	top: 219px;
-	left: 314px;
+	transform: rotate(-68deg);
+	top: 218px;
+	left: 288px;
 	background: #ff76aa;
 	
 	
@@ -238,27 +268,27 @@
 
 
 .leg2{
-	z-index: -3;
+	z-index: -1;
 	position: relative;
 	width: 131px;
 	height: 184px;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-240deg) scale(1,-1);
-	top: -241px;
-	left: 385px;
+	transform: rotate(-248deg) scale(1,-1);
+	top: -230px;
+	left: 327px;
 	background: #ff76aa;
 }
 
 .leg3{
 	position: relative;
-	width: 131px;
-	height: 232px;
+	width: 194px;
+	height: 231px;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-71deg);
-	top: -206px;
-	left: 67px;
+	transform: rotate(-68deg);
+	top: -228px;
+	left: 82px;
 	background: #ff76aa;
 }
 
@@ -271,7 +301,55 @@
 	border-width: 0.6rem 0px 0.6rem 0.6rem;
     border-radius: 50% 0 0 50%;
 	border-color: transparent transparent transparent black;
-	transform: rotate(106deg);
-	top: 12px;
-	left: -193px;
+	transform: rotate(-130deg);
+	top: -120px;
+	left: -205px;
+}
+
+.nail{
+	position: relative;
+	width: 8px;
+	height: 30px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(-178deg);
+	background: #ff76aa;
+	top: 155px;
+	left: -14px;
+	
+}
+
+.nail_2{
+	position: relative;
+	width: 8px;
+	height: 30px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(6deg) scale(1,-1);
+	background: #ff76aa;
+	top: 118px;
+	left: 1px;
+	
+}
+
+.nail_rear{position: relative;
+	width: 8px;
+	height: 30px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(-178deg);
+	background: #ff76aa;
+	top: 207px;
+	left: -16px;
+}
+
+.nail_rear_2{position: relative;
+	width: 8px;
+	height: 30px;
+	border-style: solid;
+	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
+	transform: rotate(3deg) scale(1,-1);
+	background: #ff76aa;
+	top: 170px;
+	left: -3px;
 }
