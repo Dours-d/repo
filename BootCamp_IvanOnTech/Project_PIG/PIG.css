@@ -1,9 +1,11 @@
-.container {
+#container {
   width: 100vw;
   height: 100vh;
+  background-color: #fcb72b;
+  background-image: linear-gradient(10deg, #fe551a 50%, transparent 50%), linear-gradient(-60deg, #bc2f40 30%, transparent 30%);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .head{
@@ -27,10 +29,16 @@
 	flex-direction: column;
 	width: 250px;
 	height: 200px;
-	background: #ff76aa;
+	background: #e97e8e;
 	border-color: black;
 	border: 0.3rem solid;
 	border-radius: 49% 51% 51% 49% / 65% 65% 35% 35% ;
+
+}
+
+.face:hover
+{
+        background:#ff76aa;
 }
 
 .eyes_nose{
@@ -102,7 +110,7 @@
 	justify-content: space-around;
 	width: 69px;
 	height: 65px;
-	background: #e92770;
+	background: #ca1c25;
 	border-radius: 50%;
 	margin: 3px;
 	top: 20px;
@@ -193,7 +201,7 @@
 	position: relative;
 	width: 82px;
 	height: 73px;
-	background :  deeppink;
+	background :  #b43c2b;
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
@@ -207,7 +215,7 @@
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
-	background: #ff76aa;
+	background: #e4acb7;
 	margin-right: 124px;
 	transform: rotate(-48deg);
 	animation-name: flying_left_ear;
@@ -225,7 +233,7 @@
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
 	border-color: black;
 	border: 0.3rem solid;
-	background: #ff76aa;
+	background: #e4acb7;
 	margin-bottom: 50px;
 	animation-name: flying_right_ear;
   	animation-duration: 2s;  	
@@ -241,10 +249,10 @@
 	position: relative;
 	width: 425px;
 	height: 472px;
-	border-radius: 70% 10% 81% 37% / 66% 25% 75% 34%      ;
+	border-radius: 70% 10% 63% 37% / 66% 25% 75% 40%      ;
 	border-color: black;
 	border: 0.3rem solid;
-	background: #ff76aa;
+	background: #e97e8e;
 	transform: rotate(68deg);
 	top: 107px;
 	left: 208px;
@@ -258,9 +266,9 @@
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(-68deg);
-	top: 218px;
-	left: 288px;
-	background: #ff76aa;
+	top: 185px;
+	left: 263px;
+	background: #e4acb7;
 	
 	
 }
@@ -276,8 +284,8 @@
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(-248deg) scale(1,-1);
 	top: -230px;
-	left: 327px;
-	background: #ff76aa;
+	left: 308px;
+	background: #e4acb7;
 }
 
 .leg3{
@@ -289,7 +297,7 @@
 	transform: rotate(-68deg);
 	top: -228px;
 	left: 82px;
-	background: #ff76aa;
+	background: #e4acb7;
 }
 
 .tail{
@@ -313,7 +321,7 @@
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(-178deg);
-	background: #ff76aa;
+	background: #7c5c5f;
 	top: 155px;
 	left: -14px;
 	
@@ -326,7 +334,7 @@
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(6deg) scale(1,-1);
-	background: #ff76aa;
+	background: #7c5c5f;
 	top: 118px;
 	left: 1px;
 	
@@ -338,7 +346,7 @@
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(-178deg);
-	background: #ff76aa;
+	background: #7c5c5f;
 	top: 207px;
 	left: -16px;
 }
@@ -349,7 +357,7 @@
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(3deg) scale(1,-1);
-	background: #ff76aa;
+	background: #7c5c5f;
 	top: 170px;
 	left: -3px;
 }
