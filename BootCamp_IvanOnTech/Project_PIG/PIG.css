@@ -1,13 +1,10 @@
-body{
+#body{
 	box-sizing: border-box;
 	display: flex;
 	position: relative;
 	flex-direction: column;
 	transform: scale(0.35, 0.35);
 	margin: 0px;
-
-}
-.pig{
 
 }
 
@@ -20,7 +17,7 @@ body{
   /*transform: scale(0.35, 0.35);*/
   margin: 0px;
   top: 0px;
-  left: -962px;
+  left: 0px;
 }
 
 .head{
@@ -295,8 +292,8 @@ body{
 	z-index: 1;
 	position: relative;
 	transform: rotate(85deg);
-	top: -60px;
-	left: -115px;
+	top: -29px;
+	left: -106px;
 	margin: 0px;
 }
 
