@@ -14,6 +14,7 @@ http.onreadystatechange = function() {
 
 http.open("POST", url, true);
 http.send(JSON.stringify(data));
+console.log(data);
 
 // [[42, 41, 48], [90, 83, 84], [191, 157, 175], [188, 138, 125], [215, 170, 66]]
 // note that the input colors have changed as well, by a small amount

@@ -1,21 +1,38 @@
-#container {
-  width: 100vw;
-  height: 100vh;
+body{
+	box-sizing: border-box;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	transform: scale(0.35, 0.35);
+	margin: 0px;
+
+}
+.pig{
+
+}
+
+.pig {
+  position: relative;
+  width: 820px;
+  height: 629px;
   background-color: #fcb72b;
   background-image: linear-gradient(10deg, #fe551a 50%, transparent 50%), linear-gradient(-60deg, #bc2f40 30%, transparent 30%);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  /*transform: scale(0.35, 0.35);*/
+  margin: 0px;
+  top: -584px;
+  left: -962px;
 }
 
 .head{
-	z-index: +1;
+	z-index: 3;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	top: 0px;
-	left: -95px;
+	top: 80px;
+	left: -147px;
+	transform: rotate(-105deg);
+	margin: 0px;
 
 
 
@@ -33,6 +50,7 @@
 	border-color: black;
 	border: 0.3rem solid;
 	border-radius: 49% 51% 51% 49% / 65% 65% 35% 35% ;
+	margin: 0px;
 
 }
 
@@ -48,18 +66,20 @@
 	align-items: flex-end;
 	position: relative;
 	top: 16px;
+	margin: 0px;
 	
 
 }
 
 .pupil{
 	position: relative;
-	width: 56px;
-	height: 58px;
+	width: 54px;
+	height: 57px;
 	border-radius: 50%;
 	background: black;
 	top: -3px;
 	left: 1px;
+	margin: 0px;
 }
 
 #left_eye{
@@ -69,6 +89,7 @@
 	border-color: black;
 	border: 0.3rem solid;
 	background: #0d7985;
+	margin: 0px;
 }
 
 .lights{
@@ -76,6 +97,7 @@
 	top: -47px;
 	left: -1px;
 	transform : rotate(-72deg);
+	margin: 0px;
 }
 
 .light1{
@@ -83,6 +105,7 @@
 	height: 14px;
 	background: white;
 	border-radius: 50%;
+	margin: 0px;
 }
 
 .light2{
@@ -90,6 +113,7 @@
 	height: 7px;
 	background: white;
 	border-radius: 50%;
+	margin: 0px;
 }
 
 
@@ -100,6 +124,7 @@
 	border-color: black;
 	border: 0.3rem solid;
 	background: #0d7985;
+	margin: 0px;
 }
 
 #nose{
@@ -114,6 +139,7 @@
 	border-radius: 50%;
 	margin: 3px;
 	top: 20px;
+	margin: 0px;
 }
 
 .nostril{
@@ -121,6 +147,7 @@
 	height: 19px;
 	background: black;
 	border-radius: 49% 51% 51% 49% / 50% 52% 48% 50% ;
+	margin: 0px;
 }
 
 .cheek{
@@ -133,6 +160,7 @@
 	margin-left: 50px;
 	margin-right: 50px;
 	top: 20px;
+	margin: 0px;
 }
 
 #mouth-shut{
@@ -147,6 +175,7 @@
   	animation-duration: 1.15s;  	
   	animation-iteration-count: infinite;
   	animation-timing-function: linear;
+  	margin: 0px;
 }
 
 /* The mouth animation code */
@@ -172,15 +201,16 @@
   100%{transform: rotate(-169deg) scale(1, -1);}
 }
 @keyframes top_flying{
-  0% {top: 216px;}
-  50%{top: 203.5px;}
-  100%{top: 171px;}
+  0% {top: 129px;}
+  50%{top: 110.5px;}
+  100%{top: 92px;}
 }
 
 .bottom{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin: 0px;
 
 }
 
@@ -188,12 +218,14 @@
 	z-index: -1;
 	position: relative;
 	display: flex;
-	top: 216px;
+	top: 92px;
 	left: 0px;
 	animation-name: top_flying;
   	animation-duration: 2s;  	
   	animation-iteration-count: infinite;
   	animation-timing-function: linear;
+  	margin: 0px;
+  	transform: scale(-1, 1);
 	
 
 }
@@ -207,6 +239,7 @@
 	border: 0.3rem solid;
 	top: 5px;
 	left: 5px;
+	margin: 0px;
 }
 
 #left_ear{
@@ -222,9 +255,7 @@
   	animation-duration: 2s;  	
   	animation-iteration-count: infinite;
   	animation-timing-function: linear;
-
-	
-	
+  	
 }
 
 #right_ear{
@@ -239,65 +270,77 @@
   	animation-duration: 2s;  	
   	animation-iteration-count: infinite;
   	animation-timing-function: linear;
+  	margin: 0px;
 	
 	
 
 }
 
-.body{
+.torso{
 	z-index: 0;
+	margin: 0px;
 	position: relative;
-	width: 425px;
+	width: 339px;
 	height: 472px;
-	border-radius: 70% 10% 63% 37% / 66% 25% 75% 40%      ;
+	border-radius: 56% 44% 52% 48% / 52% 50% 50% 48%       ;
 	border-color: black;
 	border: 0.3rem solid;
 	background: #e97e8e;
-	transform: rotate(68deg);
-	top: 107px;
-	left: 208px;
+	transform: rotate(101deg);
+	top: 88px;
+	left: 232px;
 }
 
+.limbs{
+	z-index: 1;
+	position: relative;
+	transform: rotate(85deg);
+	top: -60px;
+	left: -115px;
+	margin: 0px;
+}
 
 .leg1{
+	
+	z-index: 2;
 	position: relative;
 	width: 131px;
 	height: 184px;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-68deg);
-	top: 185px;
-	left: 263px;
+	transform: rotate(-98deg);
 	background: #e4acb7;
-	
+	margin: 0px;
+	top: 2px;
 	
 }
 
 
 
 .leg2{
-	z-index: -1;
+	z-index: 2;
 	position: relative;
 	width: 131px;
 	height: 184px;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-248deg) scale(1,-1);
-	top: -230px;
-	left: 308px;
+	transform: rotate(-263deg) scale(1,-1);
 	background: #e4acb7;
+	margin: 0px;
 }
 
 .leg3{
+	z-index: 1;
 	position: relative;
 	width: 194px;
 	height: 231px;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-68deg);
-	top: -228px;
-	left: 82px;
+	transform: rotate(94deg) scale(1, -1);
 	background: #e4acb7;
+	margin: 0px;
+	top: -219px;
+	left: -153px;
 }
 
 .tail{
@@ -310,9 +353,12 @@
     border-radius: 50% 0 0 50%;
 	border-color: transparent transparent transparent black;
 	transform: rotate(-130deg);
-	top: -120px;
-	left: -205px;
-}
+	margin: 0px;
+	top:-89px ;
+	left: -410px;
+
+}	
+
 
 .nail{
 	position: relative;
@@ -324,6 +370,7 @@
 	background: #7c5c5f;
 	top: 155px;
 	left: -14px;
+	margin: 0px;
 	
 }
 
@@ -337,6 +384,7 @@
 	background: #7c5c5f;
 	top: 118px;
 	left: 1px;
+	margin: 0px;
 	
 }
 
@@ -349,6 +397,7 @@
 	background: #7c5c5f;
 	top: 207px;
 	left: -16px;
+	margin: 0px;
 }
 
 .nail_rear_2{position: relative;
@@ -360,4 +409,5 @@
 	background: #7c5c5f;
 	top: 170px;
 	left: -3px;
+	margin: 0px;
 }
