@@ -1,6 +1,8 @@
 .catBox {
+    box-sizing: border-box;
     display: flex;
-    
+    align-items: flex-start;
+    overflow: hidden;
     background-color: #e2efff;
     border-radius: 10px;
     padding-top: 50px;
