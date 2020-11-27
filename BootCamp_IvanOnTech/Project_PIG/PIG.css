@@ -2,8 +2,7 @@
 	box-sizing: border-box;
 	display: flex;
 	position: relative;
-	flex-direction: column;
-	/*transform: scale(0.35, 0.35);*/
+	transform: scale(0.35, 0.35);
 	margin: 0em;
 
 }
@@ -186,9 +185,9 @@
   100%{transform: rotate(-169deg) scale(1, -1);}
 }
 @keyframes top_flying{
-  0% {top: 129px;}
-  50%{top: 110.5px;}
-  100%{top: 92px;}
+  0% {top: 11rem;}
+  50%{top: 9rem;}
+  100%{top: 8rem;}
 }
 
 .bottom{
@@ -241,6 +240,7 @@
 }
 
 #right_ear{
+	z-index: 2;
 	width: 9rem;
 	height: 6rem;
 	border-radius: 0% 100% 41% 59% / 0% 28% 72% 100%;
@@ -295,94 +295,90 @@
 .leg2{
 	z-index: 2;
 	position: relative;
-	width: 131px;
-	height: 184px;
+	width: 8rem;
+	height: 11rem;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(-263deg) scale(1,-1);
 	background: #e4acb7;
-	margin: 0px;
+	
 }
 
 .leg3{
 	z-index: 1;
 	position: relative;
-	width: 194px;
-	height: 231px;
+	width: 11rem;
+	height: 15rem;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(94deg) scale(1, -1);
 	background: #e4acb7;
 	margin: 0px;
-	top: -219px;
-	left: -153px;
+	top: -13rem;
+	left: -8rem;
 }
 
 .tail{
-	z-index: -2;
+	z-index: 0;
 	position: relative;
-	width: 238px; 
-    height: 126px;
+	width: 17rem; 
+    height: 8rem;
     border: 0.3rem solid black;
 	border-width: 0.6rem 0px 0.6rem 0.6rem;
     border-radius: 50% 0 0 50%;
 	border-color: transparent transparent transparent black;
 	transform: rotate(-130deg);
-	margin: 0px;
-	top:-89px ;
-	left: -410px;
+	top:-3.4rem ;
+	left: -29rem;
 
 }	
 
 
 .nail{
 	position: relative;
-	width: 8px;
-	height: 30px;
+	width: 1rem;
+	height: 2rem;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(-178deg);
+	transform: rotate(-169deg);
 	background: #7c5c5f;
-	top: 155px;
-	left: -14px;
-	margin: 0px;
+	top: 9.5rem;
+	left: -1rem;
 	
 }
 
 .nail_2{
 	position: relative;
-	width: 8px;
-	height: 30px;
+	width: 1rem;
+	height: 2rem;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(6deg) scale(1,-1);
+	transform: rotate(-6deg) scale(1,-1);
 	background: #7c5c5f;
-	top: 118px;
-	left: 1px;
-	margin: 0px;
+	top: 7.2rem;
+	left: 0.5rem;
 	
 }
 
 .nail_rear{position: relative;
-	width: 8px;
-	height: 30px;
+	width: 1rem;
+	height: 2rem;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
 	transform: rotate(-178deg);
 	background: #7c5c5f;
-	top: 207px;
-	left: -16px;
-	margin: 0px;
+	top: 13.3rem;
+	left: -1rem;
 }
 
 .nail_rear_2{position: relative;
-	width: 8px;
-	height: 30px;
+	width: 1rem;
+	height: 2rem;
 	border-style: solid;
 	border-radius: 49% 51% 100% 0% / 55% 49% 51% 45% ;
-	transform: rotate(3deg) scale(1,-1);
+	transform: rotate(-4deg) scale(1,-1);
 	background: #7c5c5f;
-	top: 170px;
-	left: -3px;
-	margin: 0px;
+	top: 11rem;
+	left: 0.5rem;
+	
 }
