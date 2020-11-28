@@ -1,13 +1,13 @@
 .catBox {
-    box-sizing: border-box;
-    display: flex;
-    align-items: flex-start;
+    /*! box-sizing: border-box; */
+    /*! display: flex; */
+    /*! justify-content: center; */
     overflow: hidden;
     background-color: #e2efff;
     border-radius: 10px;
-    padding-top: 50px;
-    padding-left: 20px;
-    padding-bottom: 100px;
+    padding-top: 2rem;
+    padding-left: 2.3rem;
+    /*! padding-bottom: 0rem; */
 }
 
 .cattributes {
