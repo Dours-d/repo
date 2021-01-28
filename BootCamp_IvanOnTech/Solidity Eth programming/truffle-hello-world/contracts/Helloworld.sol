@@ -7,7 +7,7 @@ contract Helloworld {
     return message;
   }
 
-  function setMessage(string memory _newMessage) public {
+  function setMessage(string memory _newMessage) public payable {
   message = _newMessage;
   }
 }
