@@ -8,6 +8,7 @@ contract Helloworld {
   }
 
   function setMessage(string memory _newMessage) public payable {
+  require(msg.value >= 1 ether);
   message = _newMessage;
   }
 }
