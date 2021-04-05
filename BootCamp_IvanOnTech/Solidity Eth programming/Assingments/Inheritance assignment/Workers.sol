@@ -4,9 +4,9 @@ pragma solidity 0.5.12;
 contract Workers is People{
 	
 	struct Worker {
-      address worker
+      address worker;
       address theBoss;
-      uint worker_salary;
+      uint32 worker_salary;
       
     }
 
@@ -14,18 +14,18 @@ contract Workers is People{
 
 	
 	
-	function createWorker(string memory name, uint age, uint height, address worker,address theBoss) public payable returns (address _theBoss, uint worker_salary) {
+	function createWorker(string memory name, uint age, uint height, address worker,address _theBoss, uint32 _salary) public payable {
 
 		require (age <= 75, "Age needs to be below 75");
-		require (worker != theBoss);
+		require (worker != _theBoss);
 		createPerson(name, age, height);
-		salary[msg.sender] += worker_salary;
-		theBoss = _theBoss;
+		salary[worker] += _salary;
+		
 	}
 
 	
 
-	function fireWorker(address _toFire, address theBoss) public {
+	function fireWorker(address _toFire, address theBoss) public payable {
       	require( msg.sender == theBoss, "You are not the Boss to fire him !");
       	require(_toFire != msg.sender, "You're the boss, You cannot fire yourself !");
       	deletePerson(_toFire);
