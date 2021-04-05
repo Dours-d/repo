@@ -4,19 +4,20 @@ pragma solidity 0.5.12;
 contract Workers is People{
 	
 	struct Worker {
-      
+      address worker
       address theBoss;
       uint worker_salary;
       
     }
 
 	mapping (address => uint) public salary;
+
 	
 	
-	
-	function createWorker(string memory name, uint age, uint height, address theBoss, address _theBoss, uint worker_salary) public payable {
+	function createWorker(string memory name, uint age, uint height, address worker,address theBoss) public payable returns (address _theBoss, uint worker_salary) {
 
 		require (age <= 75, "Age needs to be below 75");
+		require (worker != theBoss);
 		createPerson(name, age, height);
 		salary[msg.sender] += worker_salary;
 		theBoss = _theBoss;
