@@ -1,4 +1,11 @@
 
 ifundawitch/
-BootCamp IvanOnTech/Solidity Eth programming/solidity-0.5.12-course/
+BootCamp_IvanOnTech/
+Python/
 Coronapigs.crypto/
+node_modules/
+.venv/
+venv/
+*.log
+.DS_Store
+.vscode/
